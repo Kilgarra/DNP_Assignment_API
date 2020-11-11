@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DNP_Assignment_API.Data;
+using DNP_Assignment_API.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,8 @@ namespace DNP_Assignment_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<IUserService, InMemoryUserService>();
+            services.AddScoped<AdultManager, AdultManagerImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
