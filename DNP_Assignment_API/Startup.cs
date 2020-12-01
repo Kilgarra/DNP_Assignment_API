@@ -29,7 +29,7 @@ namespace DNP_Assignment_API
         {
             services.AddControllers();
             services.AddScoped<IUserService, InMemoryUserService>();
-            services.AddScoped<AdultManager, AdultManagerImpl>();
+            services.AddScoped<AdultManager, AdultManagerDBImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

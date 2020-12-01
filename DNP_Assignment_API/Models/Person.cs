@@ -1,23 +1,32 @@
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
 namespace DNP_Assignment_API.Models
 {
     public class Person
     {
+        [NotNull]
         [JsonPropertyName("FirstName")]
         public string FirstName { get; set; }
+        [NotNull]
         [JsonPropertyName("LastName")]
         public string LastName { get; set; }
         [JsonPropertyName("Id")]
         public int Id { get; set; }
+        [NotNull]
         [JsonPropertyName("HairColor")]
         public string HairColor { get; set; }
+        [NotNull]
         [JsonPropertyName("EyeColor")]
         public string EyeColor { get; set; }
+        [NotNull, Range(0, 120)] 
         [JsonPropertyName("Age")]
         public int Age { get; set; }
+        [NotNull, Range(0,250)]
         [JsonPropertyName("Weight")]
         public double Weight { get; set; }
+        [NotNull, Range(0,250)]
         [JsonPropertyName("Height")]
         public int Height { get; set; }
         [JsonPropertyName("Sex")]
